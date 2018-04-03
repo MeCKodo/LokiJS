@@ -1,6 +1,6 @@
 {
-  "name": "lokijs",
-  "version": "1.5.3",
+  "name": "lokijs-rc",
+  "version": "0.1.1",
   "description": "Fast document oriented javascript in-memory database",
   "homepage": "http://lokijs.org",
   "main": "src/lokijs.js",
@@ -23,11 +23,13 @@
   "scripts": {
     "lint": "jshint src",
     "test:browser": "karma start karma.conf.js --single-run",
-    "test:node": "istanbul cover --dir coverage/nodejs node_modules/jasmine/bin/jasmine.js",
+    "test:node":
+      "istanbul cover --dir coverage/nodejs node_modules/jasmine/bin/jasmine.js",
     "pretest": "npm run lint",
     "test": "npm run test:browser && npm run test:node",
     "build:lokijs": "uglifyjs src/lokijs.js > build/lokijs.min.js",
-    "build:indexedAdapter": "uglifyjs src/loki-indexed-adapter.js > build/loki-indexed-adapter.min.js",
+    "build:indexedAdapter":
+      "uglifyjs src/loki-indexed-adapter.js > build/loki-indexed-adapter.min.js",
     "build": "npm run build:lokijs && npm run build:indexedAdapter",
     "postbuild": "karma start karma.build.conf.js --single-run",
     "prepublish": "npm run build",

@@ -3487,9 +3487,9 @@
         if (this.filterInitialized) {
           var j = this.filteredrows.length;
 
-          while (j--) {
-            if (viewFunction(this.collection.data[this.filteredrows[j]]) === true) {
-              result.push(this.filteredrows[j]);
+          for(var i = 0; i < j; i++) {
+            if (viewFunction(this.collection.data[this.filteredrows[i]])) {
+              result.push(this.filteredrows[i]);
             }
           }
 
@@ -3500,10 +3500,10 @@
         // otherwise this is initial chained op, work against data, push into filteredrows[]
         else {
           var k = this.collection.data.length;
-
-          while (k--) {
-            if (viewFunction(this.collection.data[k]) === true) {
-              result.push(k);
+          
+          for(var n = 0; n < k; n++) {
+            if (viewFunction(this.collection.data[n])) {
+              result.push(n);
             }
           }
 
